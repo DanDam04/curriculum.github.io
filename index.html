@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/icon.png" type="image/x-icon">
+    <title>Curriculum</title>
+
+    <!-- 
+        
+        Adaptado a pantallas de portatil de altura de 760px y pantallas de 24 pulgadas,
+        
+       en pantallas más pequeñas el contenido también se visualizará bien, ya que
+
+       la pagina tiene scroll
+    
+    
+    -->
+
+    <!-- La estructura base es un grid y he usado listas, tablas, etiquetas h2, párrafos y animaciones -->
+
+    <style>
+
+        *{box-sizing: border-box;}
+
+        body {
+            
+            display: flex;
+            background: linear-gradient(to top, #3498db, #411e50);
+            background-repeat: no-repeat;
+            background-size: 220% 110%;
+            margin: 0;
+            animation: fondoAnimado 20s infinite ;
+            padding: 15px;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .curriculum {
+
+            display: none;
+            display: grid;
+            grid-template-columns: 40% 60%;
+            grid-template-rows: 30% 30% auto;
+            width: 75%;
+            height: 95vh;
+            border-radius: 20px;
+            box-shadow: 0px 5px 15px 0px;
+            animation: aparecer 2s ease;
+            
+        }
+
+        .foto{
+            
+            display: flex;
+            grid-column: 1;
+            grid-row: 1;
+            background-color: lightgrey;
+            border-top-left-radius: 15px;
+            padding-top: 20px;
+            
+            
+        }
+
+        .foto img{
+            
+            width: 45%;
+            margin: auto;
+            border-radius: 50%;
+            animation: aparecer 2s ease;
+        
+        }
+
+        .aboutme {
+
+           
+            grid-column: 1;
+            grid-row: 2;
+            background-color: lightgrey;
+            padding: 25px;
+            text-align: justify;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+       .aboutme h2 {
+
+            color: #020350;
+
+       }
+
+       .aboutme * {animation: aparecerElm 4s ease}
+
+        .skills {
+
+            grid-column: 1;
+            grid-row: 3;
+            background-color: lightgrey;
+            padding: 30px;
+            padding-top: 0;
+            border-bottom-left-radius: 15px;
+          
+        }
+
+        .skills h2 {
+
+            color: #020350;
+
+        }
+
+        .skills * {animation: aparecerElm 4s ease;}
+
+        .skills ul {list-style: none;}
+
+        .skills ul li {
+
+            margin-top: 10px;
+
+        }
+
+        .skills li .barracontainer {
+
+            width: 70px;
+            height: 10px;
+            margin-top: 17px;
+
+
+        }
+
+        .talentos {
+
+            font-weight: bold;
+
+        }
+
+        .barracontainer div {
+
+            background-color: blue;
+            height: 100%;
+        }
+
+        .skill1 {width: 70%;}
+
+        .skill2 {width: 85%;}
+
+        .skill3 {width: 90%;} 
+
+        .skill4 {width: 97%;}
+
+        .skill5 {width: 60% }
+
+
+        .listas {display: flex;}
+
+        .containdatos {
+
+            display: grid;
+            grid-row: 1/span 3;
+            grid-template-columns: auto;
+            grid-template-rows: 50% 25% 25%;
+
+
+
+        }
+
+        .experience {
+
+            grid-column: 1;
+            grid-row: 1;
+            background-color: white;
+            border-top-right-radius: 15px;
+            padding: 30px;
+        }
+
+        .experience h2 {
+
+            color: #020350;
+
+        }
+
+        .experience * {
+
+            animation: aparecerElm 5s ease;
+            text-align: justify;
+        }
+
+        .education {
+           
+            grid-column: 1;
+            grid-row: 2;
+            background-color: white;
+            padding-left: 30px;
+            padding-right: 30px;
+
+
+        }
+
+        .education *{
+
+            animation: aparecerElm 5.5s ease;
+            text-align: justify;
+        }
+
+        .education h2 {
+
+            color: #020350;
+
+
+        }
+
+        .formulario {
+
+            grid-column: 1;
+            grid-row: 3;
+            background-color: white;
+            border-bottom-right-radius: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
+
+        }
+
+        .formulario h2 {
+
+            color: #020350;
+
+        }
+
+        .formulario table {text-align: center; width: 100%;}
+
+        .formulario *{
+
+            animation: aparecer 6s ease;
+
+        }
+        
+        .formulario img {width: 30px; border-radius: 50%;}
+
+        
+
+        .insta {
+
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .correo {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }        
+
+       .phone {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 60px;
+
+       }
+
+       .formulario tr {
+
+        display: flex;
+
+       }
+
+       .form {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        margin-left:130px;
+
+       }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+                            
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                
+            }
+        }
+
+        @keyframes aparecerElm {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+                
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+    
+            }
+        }
+
+        
+        /* Responsive */
+
+        @media  screen and (max-height: 750px) {
+
+            .curriculum {
+
+                grid-template-rows: 200px 240px auto;
+                height: auto; /*Para ajustar el tamaño del gridy que el sombreado este correcto*/
+            }
+
+        }
+
+        @media  screen and (max-height: 760px) {
+
+          body {background-size: 220% 220%;}
+
+         }
+
+
+        @media  screen and (max-height: 765px) {
+
+            .foto img {width: 42% ;}
+
+        }
+
+        @media (min-height: 900px)  {
+
+            .containdatos {
+
+                grid-template-rows: 45% 30% 25%;
+
+            }
+
+            * { font-size: 20px;}
+
+            .barracontainer * {
+
+               margin-top: 21px;
+                
+            }
+
+
+        }
+
+
+
+        @media  screen and (max-width: 1404px) {
+
+            .curriculum {
+
+             grid-template-columns: 420px 600px ;
+             width: 1020px ;   
+        }
+
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="curriculum">
+
+        <div class="foto">
+
+            <img src="imagenes/foto.jpg">
+
+
+        </div>
+
+        <div class="aboutme">
+            
+            <h2>Acerca de mí</h2>
+
+            <hr>
+            
+            <p>
+            
+                Soy un apasionado desarrollador web con una sólida formación en programación y diseño, enfocado en crear experiencias 
+                digitales innovadoras y funcionales. Mi trayectoria profesional se ha centrado en el desarrollo full stack, abarcando tanto el 
+                lado del cliente como del servidor.
+        
+            </p>
+        
+        </div>
+
+        
+        <div class="skills">
+
+            <h2>Habilidades</h2>
+
+            <hr>
+
+            <div class="listas">
+
+            <ul class="talentos">
+
+                <li>Diseño web</li>
+
+                <li>Desarrollo web</li>
+
+                <li>Javascript</li>
+
+                <li>HTML y CSS</li>
+
+                <li>Trabajo en equipo</li>
+
+            </ul>
+
+            <ul class="barras">
+
+                <li><div class="barracontainer">
+
+                    <div class="skill1"></div>
+
+                </div></li>
+
+                <li><div class="barracontainer">
+
+                    <div class="skill2"></div>
+
+                </div></li>
+
+                <li><div class="barracontainer">
+
+                    <div class="skill3"></div>
+
+                </div></li>
+
+                <li><div class="barracontainer">
+
+                    <div class="skill4"></div>
+
+                </div></li>
+
+                <li><div class="barracontainer">
+
+                    <div class="skill5"></div>
+
+                </div></li>
+
+            </ul>
+
+            <ul class="porcentajes">
+
+                <li>70 %</li>
+
+                <li>85 %</li>
+
+                <li>90 %</li> 
+
+                <li>97 %</li>
+
+                <li>60 %</li>
+
+            </ul>
+
+            </div>
+
+
+        </div>
+
+        <div class="containdatos">
+
+        <div class="experience">
+
+            <h2>Experiencia</h2>
+
+            <hr>
+
+            <p>
+                Lideré el desarrollo de un sistema de gestión de contenido (CMS) interno utilizando Angular y Node.js, 
+                mejorando la eficiencia en la creación y actualización de contenido en un 30 %.
+            </p>
+
+            <p>
+                Desarrollé y mantuve aplicaciones web de extremo a extremo utilizando tecnologías modernas como HTML5, CSS3, 
+                JavaScript, y frameworks como React.js y Angular.
+            </p>
+
+            <p>
+                Participé en el desarrollo de la página de inicio del navegador MSN, trabajando en la integración de widgets dinámicos y contenido personalizado.
+            </p>
+
+            <p>
+                Colaboré con el equipo de diseño para implementar interfaces de usuario atractivas y funcionales, garantizando una experiencia de usuario excepcional.
+            </p>
+
+
+        </div>
+
+        <div class="education">
+
+            <h2>Educación</h2>
+
+            <hr>
+
+                <p><strong>Cursos destacados:</strong></p>
+
+                <ul>
+
+                <li>Diseño y Desarrollo de Interfaces de Usuario.</li>
+                <li>Programación Web Avanzada con JavaScript.</li>
+                <li>Desarrollo de Aplicaciones Empresariales utilizando Java.</li>
+        
+                </ul>
+
+        </div>
+
+        <div class="formulario">
+
+            <h2>Contacto</h2>
+
+            <hr>
+
+            <table>
+
+            <tr>
+                
+                <td class="correo">
+
+                    <img src="imagenes/correo.png">
+
+                    &ensp;
+                    
+                    pruebafichero@gmail.com
+                
+                </td>
+
+                <td class="phone">
+                    
+                    <img src="imagenes/phone.png">
+                    
+                    &ensp;632 32 34 45
+                
+                </td>
+
+            </tr>
+
+            
+
+            <tr>
+
+                <td class="insta">
+
+                    <img src="imagenes/insta.png">
+
+                    &ensp;
+
+                    @Ficheroprueba
+
+                </td>
+
+                <td class="form">Contacta conmigo: &ensp; <a href="Formulario.html" target="_blank">Formulario</a></td>
+
+            </tr>
+
+            </table>
+
+        </div>
+
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
